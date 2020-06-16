@@ -1,0 +1,185 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f4db0a4b3d5224883a6444828e1533, type: 3}
+  m_Name: UI_Rank
+  m_EditorClassIdentifier: 
+  root:
+    info:
+      assetPath: Assets/UIAssets/UI_Rank.asset
+      exportType: 1
+      isModel: 1
+      modelbackcolor: {r: 0, g: 0, b: 0, a: 0.6}
+      prefab_path: Assets/Prefab/UI/UI_Rank.prefab
+      uiType: 1
+    nodes:
+    - comps:
+      - assembly: UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: RectTransform
+        export: 0
+        fullType: UnityEngine.RectTransform
+      desc: "\u6392\u884C\u699C\u754C\u9762"
+      export: 1
+      level: 0
+      node_name: UI_Rank
+      path: 
+    - comps:
+      - assembly: UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: RectTransform
+        export: 0
+        fullType: UnityEngine.RectTransform
+      - assembly: UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: CanvasRenderer
+        export: 0
+        fullType: UnityEngine.CanvasRenderer
+      - assembly: UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: Image
+        export: 0
+        fullType: UnityEngine.UI.Image
+      - assembly: UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: ScrollRect
+        export: 0
+        fullType: UnityEngine.UI.ScrollRect
+      desc: "\u8BF7\u8F93\u5165\u6CE8\u91CA"
+      export: 0
+      level: 1
+      node_name: Scroll_View
+      path: Scroll View
+    - comps:
+      - assembly: UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: RectTransform
+        export: 0
+        fullType: UnityEngine.RectTransform
+      - assembly: UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: CanvasRenderer
+        export: 0
+        fullType: UnityEngine.CanvasRenderer
+      - assembly: UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: Image
+        export: 0
+        fullType: UnityEngine.UI.Image
+      - assembly: UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: Mask
+        export: 0
+        fullType: UnityEngine.UI.Mask
+      desc: "\u8BF7\u8F93\u5165\u6CE8\u91CA"
+      export: 0
+      level: 2
+      node_name: Viewport
+      path: Scroll View/Viewport
+    - comps:
+      - assembly: UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: RectTransform
+        export: 1
+        fullType: UnityEngine.RectTransform
+      - assembly: UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: VerticalLayoutGroup
+        export: 0
+        fullType: UnityEngine.UI.VerticalLayoutGroup
+      - assembly: UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: ContentSizeFitter
+        export: 0
+        fullType: UnityEngine.UI.ContentSizeFitter
+      desc: "\u5185\u5BB9\u533A\u57DF"
+      export: 0
+      level: 3
+      node_name: Content
+      path: Scroll View/Viewport/Content
+    - comps:
+      - assembly: UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: RectTransform
+        export: 0
+        fullType: UnityEngine.RectTransform
+      - assembly: UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: CanvasRenderer
+        export: 0
+        fullType: UnityEngine.CanvasRenderer
+      - assembly: UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: Image
+        export: 0
+        fullType: UnityEngine.UI.Image
+      - assembly: UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: Scrollbar
+        export: 0
+        fullType: UnityEngine.UI.Scrollbar
+      desc: "\u8BF7\u8F93\u5165\u6CE8\u91CA"
+      export: 0
+      level: 2
+      node_name: Scrollbar_Vertical
+      path: Scroll View/Scrollbar Vertical
+    - comps:
+      - assembly: UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: RectTransform
+        export: 0
+        fullType: UnityEngine.RectTransform
+      desc: "\u8BF7\u8F93\u5165\u6CE8\u91CA"
+      export: 0
+      level: 3
+      node_name: Sliding_Area
+      path: Scroll View/Scrollbar Vertical/Sliding Area
+    - comps:
+      - assembly: UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: RectTransform
+        export: 0
+        fullType: UnityEngine.RectTransform
+      - assembly: UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: CanvasRenderer
+        export: 0
+        fullType: UnityEngine.CanvasRenderer
+      - assembly: UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: Image
+        export: 0
+        fullType: UnityEngine.UI.Image
+      desc: "\u8BF7\u8F93\u5165\u6CE8\u91CA"
+      export: 0
+      level: 4
+      node_name: Handle
+      path: Scroll View/Scrollbar Vertical/Sliding Area/Handle
+    - comps:
+      - assembly: UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: RectTransform
+        export: 0
+        fullType: UnityEngine.RectTransform
+      - assembly: UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: CanvasRenderer
+        export: 0
+        fullType: UnityEngine.CanvasRenderer
+      - assembly: UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: Image
+        export: 0
+        fullType: UnityEngine.UI.Image
+      - assembly: UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: Button
+        export: 1
+        fullType: UnityEngine.UI.Button
+      desc: "\u9000\u51FA\u6309\u94AE"
+      export: 0
+      level: 1
+      node_name: Button
+      path: Button
+    - comps:
+      - assembly: UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: RectTransform
+        export: 0
+        fullType: UnityEngine.RectTransform
+      - assembly: UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: CanvasRenderer
+        export: 0
+        fullType: UnityEngine.CanvasRenderer
+      - assembly: UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+        compType: Text
+        export: 0
+        fullType: UnityEngine.UI.Text
+      desc: "\u8BF7\u8F93\u5165\u6CE8\u91CA"
+      export: 0
+      level: 2
+      node_name: Text
+      path: Button/Text

@@ -17,7 +17,7 @@ public class GUIStyleViewer : EditorWindow
     private string search = "";
     private GUIStyle textStyle;
 
-    [MenuItem( "Tool/GUIStyleViewer", false, 10 )]
+    [MenuItem( "Tools/GUIStyleViewer", false, 10 )]
     private static void OpenStyleViewer()
     {
         window = GetWindow<GUIStyleViewer>( false, "内置GUIStyle" );

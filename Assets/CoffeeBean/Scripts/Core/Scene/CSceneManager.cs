@@ -6,11 +6,9 @@
 
 	purpose:	场景管理类
                 提供场景的管理功能
-                包括
-                    立即加载场景
-                    异步加载场景
 
-                    支持加载进度回调和加载完成回调
+                使用方法
+                CSceneManager.LoadScene<场景运行时类>("场景名",加载中回调);
 *********************************************************************/
 
 using System;
@@ -28,6 +26,11 @@ namespace CoffeeBean
     public static class CSceneManager
     {
         /// <summary>
+        /// 准备加载的场景绑定类
+        /// </summary>
+        public static Type ReadyToLoadSceneType ;
+
+        /// <summary>
         /// 是否已经初始化
         /// </summary>
         private static bool m_HasInit = false;
@@ -36,11 +39,6 @@ namespace CoffeeBean
         /// 是否正在加载场景
         /// </summary>
         private static bool m_IsLoadingScene = false;
-
-        /// <summary>
-        /// 准备加载的场景绑定类
-        /// </summary>
-        private static Type ReadyToLoadSceneType = null;
 
         /// <summary>
         /// 异步加载操作对象
@@ -178,7 +176,7 @@ namespace CoffeeBean
             RunningScene.BindUnityScene( TargetScene );
 
             // 初始化场景
-            // SceneInit( RunningScene );
+            SceneInit( RunningScene );
 
             // 执行场景进入完毕事件
             RunningScene.AfterEnterScene( TargetScene );
@@ -200,6 +198,17 @@ namespace CoffeeBean
                 RunningScene.BeforeLeftScene( TargetScene );
                 RunningScene = null;
             }
+        }
+
+        /// <summary>
+        /// 初始化场景
+        /// </summary>
+        /// <param name="runningScene"></param>
+        private static void SceneInit( CSceneBase runningScene )
+        {
+            runningScene.UICanvas = GameObject.Find( "Canvas" )?.GetComponent<Canvas>();
+            runningScene.TopCanvas = GameObject.Find( "TopCanvas" )?.GetComponent<Canvas>();
+            runningScene.MainCamera = GameObject.Find( "Main Camera" )?.GetComponent<Camera>();
         }
 
         /// <summary>

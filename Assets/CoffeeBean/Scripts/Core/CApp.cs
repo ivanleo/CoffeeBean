@@ -53,23 +53,14 @@ namespace CoffeeBean
         private bool hasInit = false;
 
         /// <summary>
-        /// http下载目录
+        /// 设计分辨率
         /// </summary>
-        public static string Download_Path => Application.persistentDataPath + "/../download/";
-
-        ///// <summary>
-        ///// Log目录
-        ///// </summary>
-#if UNITY_EDITOR
-        public static string Log_Path => Application.dataPath + "/../Log/";
-#else
-        public static string Log_Path => Application.persistentDataPath + "/../Log/";
-#endif
+        public Vector2 DesignResolution { get; private set; }
 
         /// <summary>
-        /// 图片下载目录
+        /// http下载目录
         /// </summary>
-        public static string Texture_Path => Application.persistentDataPath + "/image/";
+        public string Download_Path => Application.persistentDataPath + "/../download/";
 
         /// <summary>
         /// 应用程序是否获得焦点
@@ -80,6 +71,8 @@ namespace CoffeeBean
         /// 应用程序是否暂停
         /// </summary>
         public bool IsApplecationPause { get; private set; }
+
+        public string Log_Path => Application.dataPath + "/../Log/";
 
         /// <summary>
         /// 多点触摸状态
@@ -111,6 +104,19 @@ namespace CoffeeBean
         /// 目标帧率
         /// </summary>
         public int TargetFrameRate { get => Application.targetFrameRate; set => Application.targetFrameRate = value; }
+
+        /// <summary>
+        /// 图片下载目录
+        /// </summary>
+        public string Texture_Path => Application.persistentDataPath + "/image/";
+
+        ///// <summary>
+        ///// Log目录
+        ///// </summary>
+#if UNITY_EDITOR
+#else
+        public static string Log_Path => Application.persistentDataPath + "/../Log/";
+#endif
 
         /// <summary>
         /// 退出应用程序事件
@@ -154,8 +160,8 @@ namespace CoffeeBean
                 return;
             }
 
-            TargetFrameRate = 60;
-            MutiTouchEnabled = false;
+            IsApplecationFocus = true;
+            IsApplecationPause = false;
 
             // 初始化常用文件夹
             InitDirectory();
@@ -190,8 +196,25 @@ namespace CoffeeBean
             {
                 DI.Create();
             }
+        }
 
-            hasInit = true;
+        /// <summary>
+        /// 设置设计分辨率
+        /// </summary>
+        /// <param name="designX"></param>
+        /// <param name="designY"></param>
+        public void SetDesignSize( float designX, float designY )
+        {
+            // 设计分辨率
+            DesignResolution = new Vector2( designX, designY );
+            // 设计宽高比
+            float _DesignWHRatio = designX / designY;
+            // 设计宽高比下的摄像机尺寸
+            float _DesignSize = Mathf.Max( designX, designY ) / 200f;
+            // 真实宽高比
+            float _RealWHRatio = ( float ) Screen.width / ( float ) Screen.height;
+            // 真实宽高比下的摄像机尺寸
+            CSceneManager.CameraSize = _DesignSize / _RealWHRatio * _DesignWHRatio;
         }
 
         /// <summary>

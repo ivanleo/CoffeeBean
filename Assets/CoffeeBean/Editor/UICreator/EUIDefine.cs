@@ -37,14 +37,6 @@ public enum EUIType
 }
 
 /// <summary>
-/// UI数据
-/// </summary>
-public class EUIData : ScriptableObject
-{
-    public UIRoot root;
-}
-
-/// <summary>
 /// UI组件
 /// </summary>
 [Serializable]

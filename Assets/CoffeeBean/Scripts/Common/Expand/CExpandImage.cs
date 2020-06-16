@@ -51,7 +51,7 @@ namespace CoffeeBean
                 string TargetFileName = URL.MD5() + "." + TargetFileType;
 
                 // 本地文件名，用于判断文件是否存在
-                string LoacalFileName = CApp.Texture_Path + TargetFileName;
+                string LoacalFileName = CApp.Inst.Texture_Path + TargetFileName;
 
                 // 判断本地文件是否存在
                 FileInfo FI = new FileInfo ( LoacalFileName );

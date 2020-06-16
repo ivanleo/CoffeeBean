@@ -37,7 +37,7 @@ namespace CoffeeBean
                 CLOG.I( "http", "# HTTP #: ----- DownLoad -----" );
                 CLOG.I( "http", $"# HTTP #: URL: {URL}" );
 
-                uWeb.downloadHandler = new DownloadHandlerFile( CApp.Download_Path + FileName );
+                uWeb.downloadHandler = new DownloadHandlerFile( CApp.Inst.Download_Path + FileName );
                 var AsyncOpertion = uWeb.SendWebRequest();
 
                 if ( progress != null )
@@ -61,7 +61,7 @@ namespace CoffeeBean
                     throw new HTTPException( uWeb.error );
                 }
 
-                CLOG.I( "http", $"# HTTP #: Save on: {CApp.Download_Path + FileName}" );
+                CLOG.I( "http", $"# HTTP #: Save on: {CApp.Inst.Download_Path + FileName}" );
                 CLOG.I( "http", "# HTTP #: Download Successful" );
 
                 return true;

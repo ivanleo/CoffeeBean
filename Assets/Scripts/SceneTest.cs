@@ -61,11 +61,6 @@ public class Scene2 : CSceneBase
 
 public class SceneTest : MonoBehaviour
 {
-    public void Start()
-    {
-        CoffeeMain.Init();
-    }
-
     private void LoadScene()
     {
         CSceneManager.LoadScene<Scene1>( "Test1", ( float progress ) => Debug.Log( $"Loading Test1:{progress}" ) );
@@ -73,7 +68,7 @@ public class SceneTest : MonoBehaviour
 
     private void OnGUI()
     {
-        if ( GUI.Button( new Rect( 100, 100, 200, 60 ), "加载新地图" ) )
+        if ( GUI.Button( new Rect( 400, 100, 200, 60 ), "加载新地图" ) )
         {
             LoadScene();
         }

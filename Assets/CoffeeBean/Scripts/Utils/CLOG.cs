@@ -85,9 +85,9 @@ namespace CoffeeBean
         /// <summary>
         /// 开始Debug的Logger功能
         /// </summary>
+        [Conditional( "NEED_LOG" )]
         public static void Init()
         {
-#if NEED_LOG
             if ( m_IsRunning )
             {
                 return;
@@ -105,7 +105,7 @@ namespace CoffeeBean
             string   second = now.Second.ToString().PadLeft ( 2, '0' );
 
             string logName = $"Log_{now.Year}_{month}_{day}_{hour}_{minute}_{second}.txt";
-            string logPath = $"{CApp.Log_Path}/{logName}";
+            string logPath = $"{CApp.Inst.Log_Path}/{logName}";
 
             // 文件存在则删除
             if ( File.Exists( logPath ) )
@@ -129,22 +129,20 @@ namespace CoffeeBean
 
             // 添加Log处理
             Application.logMessageReceived += OnLogHandler;
-#endif
         }
 
         /// <summary>
         /// 停止记log
         /// </summary>
+        [Conditional( "NEED_LOG" )]
         public static void Stop()
         {
-#if NEED_LOG
             lock ( m_Locker )
             {
                 m_IsRunning = false;
                 m_LogQueue.Clear();
                 m_LogWriter.Close();
             }
-#endif
         }
 
         /// <summary>
@@ -259,6 +257,7 @@ namespace CoffeeBean
         /// 将要打印的log压入队列
         /// </summary>
         /// <param name="msg"></param>
+        [Conditional( "NEED_LOG" )]
         private static void PushLog( string msg )
         {
             m_LogQueue.Enqueue( msg );
